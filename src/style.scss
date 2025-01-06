@@ -8,10 +8,10 @@
 
     /* Сетка */
     --container-width: 1362px;
-    --content-padding: 20px;
+    --content-padding: 50px;
 
     @media (max-width: 640px) {
-
+        padding: 20px;
     }
 }
 
