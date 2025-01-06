@@ -1,0 +1,37 @@
+@import "reset.min.css";
+@import "fonts";
+
+:root {
+    /* Цвета */
+    --black-color: #121214;
+    --grey-color: #3C3C3C;
+
+    /* Сетка */
+    --container-width: 1362px;
+    --content-padding: 20px;
+
+    @media (max-width: 640px) {
+
+    }
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: calc(var(--container-width) + 2 * var(--content-padding));
+    margin: 0 auto;
+    padding: 0 var(--content-padding);
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+.main {
+    flex-grow: 1;
+}
