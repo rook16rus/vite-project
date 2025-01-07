@@ -6,7 +6,12 @@ const props = defineProps(['products'])
 
 <template>
   <ul class="products-list">
-    <ProductsItem v-for="product in products" :product="product" :key="product.id" />
+    <ProductsItem
+        v-for="product in products"
+        :product="product"
+        :key="product.id"
+        @order-form-close="(value, title) => $emit('order-form-open', value, title)"
+    />
   </ul>
 </template>
 

@@ -10,6 +10,17 @@
 
 @font-face {
   font-family: 'RF Dewi Extended';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src:
+          url("./assets/fonts/RFDewiExtended-Semibold.woff2") format("woff2"),
+          url("./assets/fonts/RFDewiExtended-Semibold.woff") format("woff");
+}
+
+
+@font-face {
+  font-family: 'RF Dewi Extended';
   font-weight: 700;
   font-style: normal;
   font-display: swap;

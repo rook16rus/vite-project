@@ -16,6 +16,10 @@
     <span class="products-item__price">
         от {{ price }} $
     </span>
+
+    <button class="products-item__button" @click="$emit('order-form-close', true, title)">
+      Заказать
+    </button>
   </li>
 </template>
 
@@ -48,6 +52,25 @@
     &__price {
       font: 400 17px/1.2 'RF Dewi Extended', sans-serif;
       color: var(--grey-color);
+    }
+
+    &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 26px 2px;
+      height: 36px;
+      margin-top: 16px;
+      align-self: flex-start;
+
+      border-radius: 5px;
+      border: 0;
+      background-color: var(--black-color);
+      cursor: pointer;
+
+      font: 700 16px/1.2 'RF Dewi Extended', sans-serif;
+      text-transform: uppercase;
+      color: var(--white-color);
     }
   }
 </style>

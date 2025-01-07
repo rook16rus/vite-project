@@ -1,22 +1,40 @@
 @import "reset.min.css";
-@import "fonts";
+@import "fonts.css";
 
 :root {
     /* Цвета */
     --black-color: #121214;
     --grey-color: #3C3C3C;
+    --white-color: #ffffff;
+    --input-color: #F9F9F9;
+    --placeholder-color: #CDCFDB;
+    --label-color: #3C3D44;
+    --border-color: #CBCBCB;
 
     /* Сетка */
     --container-width: 1362px;
     --content-padding: 50px;
 
     @media (max-width: 640px) {
-        padding: 20px;
+        --content-padding: 20px;
     }
 }
 
 *, *::after, *::before {
     box-sizing: border-box;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
 .container {
@@ -34,4 +52,88 @@
 
 .main {
     flex-grow: 1;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    &__block {
+        &--large {
+            grid-column: span 2;
+        }
+    }
+
+    &__button {
+        height: 66px;
+        padding: 0 30px;
+        grid-column: span 2;
+
+        border: 0;
+        border-radius: 5px;
+        outline: 0;
+        background-color: var(--black-color);
+        cursor: pointer;
+
+        font: 900 12px/1.2 'RF Dewi Expanded', sans-serif;
+        color: var(--white-color);
+        text-transform: uppercase;
+    }
+}
+
+.input-block {
+    position: relative;
+}
+
+.input {
+    display: flex;
+    width: 100%;
+    height: 61px;
+    padding: 28px 20px 8px;
+
+    border: 0;
+    border-radius: 5px;
+    background-color: var(--input-color);
+
+    font: 400 13px/1.2 'RF Dewi Extended', sans-serif;
+    color: var(--black-color);
+    
+    &::placeholder {
+        color: var(--placeholder-color);
+    }
+}
+
+.label {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+
+    font: 600 12px/1.2 'RF Dewi Extended', sans-serif;
+    color: var(--label-color);
+}
+
+.label-file {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 61px;
+    padding: 0 20px;
+
+    border: 1px dashed var(--border-color);
+    border-radius: 5px;
+    background-color: var(--input-color);
+    cursor: pointer;
+
+    font: 600 12px/1.2 'RF Dewi Extended', sans-serif;
+    color: var(--label-color);
+}
+
+.error {
+    margin-left: 20px;
+
+    font: 400 10px/1.2 'RF Dewi Extended', sans-serif;
+    color: red;
 }
