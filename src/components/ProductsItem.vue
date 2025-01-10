@@ -1,6 +1,6 @@
 <script setup>
   const props = defineProps(['product']);
-  const { title, image, price } = props.product;
+  const { title, image, price, id } = props.product;
 </script>
 
 <template>
@@ -17,9 +17,15 @@
         от {{ price }} $
     </span>
 
-    <button class="products-item__button" @click="$emit('order-form-close', true, title)">
-      Заказать
-    </button>
+    <div class="products-item__buttons">
+      <button class="products-item__button" @click="$emit('add-to-cart')">
+        В корзину
+      </button>
+
+      <router-link :to="'/products/' + id" class="products-item__button">
+        Перейти
+      </router-link>
+    </div>
   </li>
 </template>
 
@@ -54,11 +60,17 @@
       color: var(--grey-color);
     }
 
+    &__buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
     &__button {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0 26px 2px;
+      padding: 0 10px 2px;
       height: 36px;
       margin-top: 16px;
       align-self: flex-start;
@@ -71,6 +83,7 @@
       font: 700 16px/1.2 'RF Dewi Extended', sans-serif;
       text-transform: uppercase;
       color: var(--white-color);
+      text-decoration: none;
     }
   }
 </style>

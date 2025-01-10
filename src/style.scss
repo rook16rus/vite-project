@@ -10,6 +10,7 @@
     --placeholder-color: #CDCFDB;
     --label-color: #3C3D44;
     --border-color: #CBCBCB;
+    --blue-color: #49D0FF;
 
     /* Сетка */
     --container-width: 1362px;
@@ -51,6 +52,8 @@
 }
 
 .main {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
 }
 

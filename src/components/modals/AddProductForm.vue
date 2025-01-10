@@ -31,6 +31,7 @@ const validatePrice= (value) => {
 }
 
 const onSubmit = (values) => {
+  values.addProductId = Math.floor(Math.random() * (200 - 100 + 1)) + 100;
   console.log(JSON.stringify(values, null, 2));
   emit('update:modelValue');
   emit('add-product', values);

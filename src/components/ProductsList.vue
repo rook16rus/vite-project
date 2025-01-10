@@ -10,7 +10,7 @@ const props = defineProps(['products'])
         v-for="product in products"
         :product="product"
         :key="product.id"
-        @order-form-close="(value, title) => $emit('order-form-open', value, title)"
+        @add-to-cart="$emit('add-to-cart', product)"
     />
   </ul>
 </template>
